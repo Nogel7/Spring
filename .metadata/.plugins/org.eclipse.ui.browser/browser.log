@@ -1,0 +1,4 @@
+
+3월 24, 2022 09:17:33.795 NEW SESSION
+3월 24, 2022 09:17:33.796 [10484:18980:0324/091733.789:ERROR:device_event_log_impl.cc(214)] [09:17:33.789] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+3월 24, 2022 09:17:33.797 [10484:18980:0324/091733.796:ERROR:device_event_log_impl.cc(214)] [09:17:33.795] USB: usb_device_handle_win.cc:1049 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
