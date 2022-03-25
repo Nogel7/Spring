@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
     <fullyQualifiedTypeName name="com.ict.controller.di.classfile.Singer"/>
+    <fullyQualifiedTypeName name="com.ict.controller.di.classfile.Broadcast"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.ict.controller.di.classfile.BalladSinger"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="javax.inject.Qualifier"/>
     <fullyQualifiedTypeName name="com.ict.controller.di.classfile.Stage"/>
 </qualifiedTypeNameHistroy>
