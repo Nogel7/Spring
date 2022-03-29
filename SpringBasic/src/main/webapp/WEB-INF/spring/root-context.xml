@@ -23,4 +23,6 @@
 	<bean id="stage2" class="com.ict.controller.di.classfile.Stage">
 	    <constructor-arg ref="popSinger"></constructor-arg>
 	</bean>	
+	
+	
 </beans>
