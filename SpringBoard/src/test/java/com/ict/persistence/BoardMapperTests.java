@@ -21,7 +21,7 @@ public class BoardMapperTests {
 	@Autowired
 	private BoardMapper boardMapper;
 	
-	@Test
+	//@Test
 	public void testgetList() {
 		List<BoardVO> result = boardMapper.getList();  	
 		log.info("저장된 게시물 정보 : " + result);
@@ -62,9 +62,31 @@ public class BoardMapperTests {
 			//log.info(vo);
 		}
 		
+		// delete 메서드에 대한 테스트 코드 작성 후
+		// 삭제여부를 sqldeveloper나 상단의 getAllList()로 확인해보세요.
 		//@Test
 		public void testDelete() {
 			boardMapper.delete(1);
+		}
+		
+		// update 메서드에 대한 테스트 코드를 작성해주신 다음
+		// 수정여부를 getAllList()로 확인해보세요.
+		//@Test
+		public void testUpdate() {
+			BoardVO vo = new BoardVO();
+			log.info("전달 데이터 아직 입력 안됨 vo : " + vo);
+			
+	     	vo.setTitle("범칙금");
+			vo.setContent("아 돈날렸다고~");
+			vo.setBno(3);
+			
+			log.info("전달 데이터가 입력된 vo : " + vo);
+			boardMapper.update(vo);
+		}
+		
+		@Test
+		public void testUpdate2() {
+			boardMapper.update2("up2로 바꾼제목","up2로 바꾼본문", 2);
 		}
 		
 	
