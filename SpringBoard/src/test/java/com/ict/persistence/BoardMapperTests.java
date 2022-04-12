@@ -23,7 +23,7 @@ public class BoardMapperTests {
 	
 	//@Test
 	public void testgetList() {
-		List<BoardVO> result = boardMapper.getList();  	
+		List<BoardVO> result = boardMapper.getList(1);  	
 		log.info("저장된 게시물 정보 : " + result);
 	}
 	
