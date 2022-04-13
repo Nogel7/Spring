@@ -10,12 +10,10 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="com.ict.controller.di.classfile.Book"/>
     <fullyQualifiedTypeName name="com.ict.controller.di.classfile.Library"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.ict.controller.vo.UserVO"/>
@@ -30,7 +28,6 @@
     <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
     <fullyQualifiedTypeName name="com.ict.mapper.TimeMapper"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.ict.mapper.BoardMapper"/>
     <fullyQualifiedTypeName name="org.junit.Test"/>
@@ -44,4 +41,9 @@
     <fullyQualifiedTypeName name="lombok.extern.log4j.Log4j2"/>
     <fullyQualifiedTypeName name="com.ict.controller.BoardController"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="com.ict.domain.Criteria"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="com.ict.domain.PageMaker"/>
 </qualifiedTypeNameHistroy>

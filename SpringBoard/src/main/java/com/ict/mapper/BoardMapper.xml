@@ -14,10 +14,12 @@
 			      <![CDATA[
 			            SELECT * FROM
 			                  (SELECT /*+ INDEX_DESC(board_tbl pk_board) */
-			                  rownum rn, board_tbl.* FROM board_tbl WHERE rownum <= (#{pageNum} * 10))
-			                       WHERE rn > ((#{pageNum} - 1) * 10)
+			                  rownum rn, board_tbl.* FROM board_tbl WHERE rownum <= #{pageEnd})
+			                       WHERE rn >#{pageStart}
 			      ]]>
 			</select>
+			<!-- 대신 getter를 #{}로 호출할 수 있다는 특성을 이용해서 위와 같이 getPageStart라는 getter를 호출시
+			자동으로 시작페이지가 구해지도록 합니다. -->
 			
 			<!-- insert 구문이므로 insert태그를 써야 하고 리턴자료가 없으니 자연히 resultType도 작성안합니다.
 			BoardVO를 입력받지만 #{} 내부에는 vo.변수명 이 아닌 그냥 변수명을 그대로 써주시면 됩니다. -->
@@ -51,6 +53,12 @@
 			        title=#{title}, content=#{content}, updatedate=SYSDATE WHERE 
 			        bno=#{bno}
 			</update>
+			
+			<select id="countPageNum" resultType="int">
+			      <![CDATA[
+			             SELECT COUNT(*) FROM board_tbl
+			      ]]>
+			</select>
 
        
         

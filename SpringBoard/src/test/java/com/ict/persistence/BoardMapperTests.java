@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ict.domain.BoardVO;
+import com.ict.domain.Criteria;
 import com.ict.mapper.BoardMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -22,8 +23,8 @@ public class BoardMapperTests {
 	private BoardMapper boardMapper;
 	
 	//@Test
-	public void testgetList() {
-		List<BoardVO> result = boardMapper.getList(1);  	
+	public void testgetList(Criteria cri) {
+		List<BoardVO> result = boardMapper.getList(cri);  	
 		log.info("저장된 게시물 정보 : " + result);
 	}
 	
