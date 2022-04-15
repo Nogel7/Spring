@@ -42,7 +42,7 @@
 			<div class="col-md-9">
 				<!-- <a href="http://localhost:8181/boardList"><button>글 목록</button></a>  -->
 				<!-- 부트스트랩 적용하면 아래와 같이도 가능 -->
-				<a href="/boardList" class="btn btn-success">글 목록</a>
+				<a href="/boardList?pageNum=${param.pageNum }&searchType=${param.searchType}&keyword=${param.keyword}" class="btn btn-success">글 목록</a>
 			</div>
 			
 			<div class="col-md-2">

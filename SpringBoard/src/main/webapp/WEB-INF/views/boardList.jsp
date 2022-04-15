@@ -28,7 +28,7 @@
 				<c:forEach var="board" items="${boardList}">
 					<tr>
 						<td>${board.bno}</td>
-					    <td><a href="/boardDetail?bno=${board.bno}&searchType=${pageMaker.cri.searchType}&keyword=${pageMaker.cri.keyword}">${board.title}</a></td>
+					    <td><a href="http://localhost:8181/boardDetail/${board.bno}?pageNum=${pageMaker.cri.pageNum}&searchType=${pageMaker.cri.searchType}&keyword=${pageMaker.cri.keyword}">${board.title}</a></td>
 						<td>${board.writer}</td>
 						<td>${board.regdate}</td>
 						<td>${board.updatedate}</td>

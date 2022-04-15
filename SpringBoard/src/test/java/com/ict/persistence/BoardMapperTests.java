@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ict.domain.BoardVO;
 import com.ict.domain.Criteria;
+import com.ict.domain.SearchCriteria;
 import com.ict.mapper.BoardMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -23,7 +24,7 @@ public class BoardMapperTests {
 	private BoardMapper boardMapper;
 	
 	//@Test
-	public void testgetList(Criteria cri) {
+	public void testgetList(SearchCriteria cri) {
 		List<BoardVO> result = boardMapper.getList(cri);  	
 		log.info("저장된 게시물 정보 : " + result);
 	}
@@ -85,11 +86,20 @@ public class BoardMapperTests {
 			boardMapper.update(vo);
 		}
 		
-		@Test
+		//@Test
 		public void testUpdate2() {
 			boardMapper.update2("up2로 바꾼제목","up2로 바꾼본문", 2);
 		}
 		
+		// 구문 생성이 어떻게되는지 관측하기 위한 테스트코드
+		//@Test
+		public void testSearchGetList() {
+			SearchCriteria cri = new SearchCriteria();
+			cri.setKeyword("테스트");
+		    cri.setSearchType("t");
+		    
+		    boardMapper.getList(cri);
+		}
 	
 
 }
