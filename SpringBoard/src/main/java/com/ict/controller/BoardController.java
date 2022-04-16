@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.ict.domain.BoardVO;
 import com.ict.domain.Criteria;
@@ -100,9 +101,19 @@ public class BoardController {
 	// / submit 버튼을 생성해서 처리하게 해주세요
 	// 삭제 수행 후 boardList로 리다이렉트해주세요.
 	@PostMapping("/boardDelete")
-	public String boardDelete(long bno) {
+	public String boardDelete(long bno, SearchCriteria cri, RedirectAttributes rttr) {
+		log.info("pageNum 정보 : " + cri.getPageNum());
+		log.info("searchType 정보 : " + cri.getSearchType());
+		log.info("keyword 정보 : " + cri.getKeyword());
+		
+		// 리다이렉트 주소에 페이지번호, 검색조건, 키워드 전달
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());		
+		
 		// 삭제로직 실행
 		service.delete(bno);
+		
 		// 리턴으로 리스트페이지 복귀
 		return "redirect:/boardList";
 	}
@@ -124,8 +135,27 @@ public class BoardController {
 	// 해당 글의 냐용이 수정되도록 만들어주시면 됩니다.
 	// 수정 후에는 수정요청이 들어온 글 번호의 디테일페이지로 리다리엑트 시켜주세요.
 	@PostMapping("/boardUpdate")
-	public String boardUpdate(BoardVO board) {
+	                                                                // keyword,searchType, pageNum을 받기 위해 선언
+	public String boardUpdate(BoardVO board, SearchCriteria cri, RedirectAttributes rttr) {
+		// SearchCriteria가 제대로 받아오는지 체크
+		log.info("수정로직입니다. : " + board);
+		log.info("검색어 : " + cri.getKeyword());
+		log.info("검색조건 : " + cri.getSearchType());
+		log.info("페이지번호 : " + cri.getPageNum());
+		
+		// 리다리엑트시 주소창 뒤에 파라미터 쿼리스트링 혁시으로 붙이기
+		// rttr.addAttribute("파라미터명","전달자료")
+		// 는 호출되면 redirect 주소 뒤에 파라미터를 붙여줍니다.
+		// rttr.addFlashAttribute()는 넘어간 페이지에서 파라미터를
+		// 쓸 수 있도록 전달하는 것으로 둘의 역활이 다르니 주의해주세요.
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("searchType", cri.getSearchType());
+		rttr.addAttribute("keyword", cri.getKeyword());
+		
+		// update호출
 		service.update(board);
+	
+		// redirect:주소?글번=getter
 		return "redirect:/boardDetail/"+ board.getBno();
 	}
 	

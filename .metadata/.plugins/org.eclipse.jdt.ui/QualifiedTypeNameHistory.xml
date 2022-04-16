@@ -49,4 +49,5 @@
     <fullyQualifiedTypeName name="com.ict.service.BoardService"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="com.ict.domain.SearchCriteria"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
 </qualifiedTypeNameHistroy>

@@ -42,13 +42,16 @@
 			<div class="col-md-9">
 				<!-- <a href="http://localhost:8181/boardList"><button>글 목록</button></a>  -->
 				<!-- 부트스트랩 적용하면 아래와 같이도 가능 -->
-				<a href="/boardList?pageNum=${param.pageNum }&searchType=${param.searchType}&keyword=${param.keyword}" class="btn btn-success">글 목록</a>
+				<a href="/boardList?pageNum=${param.pageNum == null ? 1 : param.pageNum }&searchType=${param.searchType}&keyword=${param.keyword}" class="btn btn-success">글 목록</a>
 			</div>
 			
 			<div class="col-md-2">
 				<!-- 수정 버튼 -->
 				<form action="/boardUpdateForm" method="post">
 					<input type="hidden" name="bno" value="${board.bno}"/>
+					<input type="hidden" name="pageNum" value="${param.pageNum }"/>
+					<input type="hidden" name="searchType" value="${param.searchType }"/>
+					<input type="hidden" name="keyword" value="${param.keyword }"/>
 					<input type="submit" value="수정하기" class="btn btn-warning"/>
 				</form>
 			</div>
@@ -56,6 +59,9 @@
 				<!-- 삭제 버튼 -->
 				<form action="/boardDelete" method="post">
 					<input type="hidden" name="bno" value="${board.bno}"/>
+					<input type="hidden" name="pageNum" value="${param.pageNum }"/>
+					<input type="hidden" name="searchType" value="${param.searchType }"/>
+					<input type="hidden" name="keyword" value="${param.keyword }"/>
 					<input type="submit" value="삭제하기" class="btn btn-danger"/>
 				</form>
 			</div>
