@@ -8,69 +8,46 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	
 	<div class="container">
-		<br/><h1>${board.bno}번 글 조회중</h1><br/>
-	
+		<h1 class="text text-primary">${board.bno }번글 조회중</h1>
 		<div class="row">
-			<div class="col-md-2">
-				글 번호 <input type="number" value="${board.bno}" class="form-control"/> 
-			</div>
-			<div class="col-md-5">
-				작성일 <input type="text" value="${board.regdate}" class="form-control"/> 
-			</div>
-			<div class="col-md-5">
-				수정일 <input type="text" value="${board.updatedate}" class="form-control"/> <br/><br/>
-			</div>
-		
-			<div class="col-md-8">
-				글 제목 <input type="text" size=55 value="${board.title}" class="form-control"/> 
-			</div>
-			<div class="col-md-4">
-				글쓴이 <input type="text" value="${board.writer}" class="form-control"/> <br/><br/>
-			</div>
-			<textarea cols=110 rows=20 class="form-control" >${board.content}</textarea> <br/><br/>
-		
-		</div><br/>	
-		
-		<!-- <a href="http://localhost:8181/boardList"><button>게시글 리스트</button></a> <br/><br/>  -->
-	
-	
-		<div class="row">
-		
 			<div class="col-md-9">
-				<!-- <a href="http://localhost:8181/boardList"><button>글 목록</button></a>  -->
-				<!-- 부트스트랩 적용하면 아래와 같이도 가능 -->
-				<a href="/boardList?pageNum=${param.pageNum == null ? 1 : param.pageNum }&searchType=${param.searchType}&keyword=${param.keyword}" class="btn btn-success">글 목록</a>
+				<input type="text" class="form-control" value="제목 : ${board.title }" />
 			</div>
-			
-			<div class="col-md-2">
-				<!-- 수정 버튼 -->
-				<form action="/boardUpdateForm" method="post">
-					<input type="hidden" name="bno" value="${board.bno}"/>
-					<input type="hidden" name="pageNum" value="${param.pageNum }"/>
-					<input type="hidden" name="searchType" value="${param.searchType }"/>
-					<input type="hidden" name="keyword" value="${param.keyword }"/>
-					<input type="submit" value="수정하기" class="btn btn-warning"/>
+			<div class="col-md-3">
+				<input type="text" class="form-control" value="글쓴이 : ${board.writer }" />
+			</div>
+		</div>
+		<textarea rows="10" class="form-control">${board.content }</textarea>
+		<div class="row">
+			<div class="col-md-3">쓴날짜 : </div>
+			<div class="col-md-3">${board.regdate }</div>
+			<div class="col-md-3">수정날짜 : </div>
+			<div class="col-md-3">${board.updatedate }</div>
+		</div>
+		<div class="row">
+			<div class="col-md-1">
+				<a href="/board/boardList?pageNum=${param.pageNum == null ? 1 : param.pageNum}&searchType=${param.searchType }&keyword=${param.keyword}" class="btn btn-success btn-sm">글목록</a>
+			</div>
+			<div class="col-md-1">
+				<form action="/board/boardDelete" method="post">
+					<input type="hidden" value="${board.bno }" name="bno" />
+					<input type="hidden" name="pageNum" value="${param.pageNum}" />
+					<input type="hidden" name="searchType" value="${param.searchType}" />
+					<input type="hidden" name="keyword" value="${param.keyword}" />
+					<input type="submit" value="삭제" class="btn btn-danger btn-sm">
 				</form>
 			</div>
 			<div class="col-md-1">
-				<!-- 삭제 버튼 -->
-				<form action="/boardDelete" method="post">
-					<input type="hidden" name="bno" value="${board.bno}"/>
-					<input type="hidden" name="pageNum" value="${param.pageNum }"/>
-					<input type="hidden" name="searchType" value="${param.searchType }"/>
-					<input type="hidden" name="keyword" value="${param.keyword }"/>
-					<input type="submit" value="삭제하기" class="btn btn-danger"/>
+				<form action="/board/boardUpdateForm" method="post">
+					<input type="hidden" name="bno" value="${board.bno }" />
+					<input type="hidden" name="pageNum" value="${param.pageNum}" />
+					<input type="hidden" name="searchType" value="${param.searchType}" />
+					<input type="hidden" name="keyword" value="${param.keyword}" />
+					<input type="submit" value="수정" class="btn btn-warning btn-sm">
 				</form>
 			</div>
-			
-			
-			
 		</div>
-		
 	</div>
-
 </body>
 </html>
