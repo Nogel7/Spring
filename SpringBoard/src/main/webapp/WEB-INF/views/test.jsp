@@ -21,7 +21,9 @@
 	<!-- jquery cdn 로드 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript">
-		let bno = 342;
+		let bno = 131095;
+		
+		function getAllList(){
 						// 주소				// 콜백함수 주소 요청으로 얻어온 json을 어떻게 처리할지
 		$.getJSON("/replies/all/" + bno, function(data){
 			// 문자열을 이용해 태그를 생성하거나 끼워넣을 수 있으므로
@@ -48,6 +50,9 @@
 			$("#replies").html(str);
 			
 		});
+		}
+		// 함수 호출 구문을 적어야 진짜 실행됨, 함수 선언부는 작성한다고 해서 바로 실행되지 않음
+		getAllList();
 						
 			// 버튼(testBtn) 클릭시 발동되는 이벤트
 				// testBtn 버튼 클릭 시     / 43~49번 라인 실행
