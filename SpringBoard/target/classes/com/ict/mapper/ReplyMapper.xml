@@ -9,6 +9,9 @@
 		SELECT * FROM reply_tbl
 			WHERE bno = #{bno}
 		ORDER BY rno DESC
+		<!-- SELECT rownum, rt.* FROM
+        (SELECT * FROM reply_tbl WHERE bno = #{bno} ODER BY REPLYDATE DESC) rt
+        ORDER BY rownum DESC   각 게시물에 댓글 번호 부여시 -->
 	</select>
 
 	<insert id="create">
