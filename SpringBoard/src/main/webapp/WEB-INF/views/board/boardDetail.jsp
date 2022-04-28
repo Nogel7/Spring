@@ -67,7 +67,7 @@
 	
 	
 	<!-- 댓글영역 -->
-	<h2>댓글</h2>
+	
 	<!-- 댓글이 추가될 공간 -->
 	<div class="row">
 		<ul id="replies">
@@ -75,15 +75,20 @@
 		</ul>
 	</div>
 	<!-- 댓글 작성 공간 -->
-	<div>
-		<div>
-			댓글 글쓴이 <input type="text" name="replyer" id="newReplyWriter">
-		</div>
-		<div>
-			댓글 내용 <input type="text" name="reply" id="newReplyText"> 
-		</div>
-		<button id="replyAddBtn">댓글 추가</button>
-	</div>
+	<div class="row box-box-success">
+		<div class="box-header">
+		      <h2 class="text-primary">댓글 작성</h2>
+		</div><!-- header -->
+		<div class="box-body">
+		      <strong>Writer</strong>
+		      <input type="text" id="newReplyWriter" placeholder="Replyer" class="form-control">
+		      <strong>ReplyText</strong>
+		      <input type="text" id="newReplyText" placeholder="ReplyText" class="form-control">
+		 </div><!-- body -->
+		 <div class="box-footer">
+		      <button type="button" class="btn btn-success" id="replyAddBtn">Add Reply</button>
+		 </div><!-- footer -->	      
+	 </div><!-- row -->
 	
 	<!-- modal은 일종의 팝업입니다.
 	단, 새 창을 띄우지는 않고 css를 이용해 특정 태그가 조건부로 보이거나 안 보이도록 처리해서 
@@ -203,12 +208,13 @@
 			// this는 button 입니다. button의 부모가 바로 .replyLi 입니다.
 			// 즉, 클릭한 버튼과 연계된 li 태그를 replytag 변수에 저장합니다. 
 			var replytag = $(this).parent();
-			var replyContent = $(this).prev();
 			//4월 27일 수정 : this(button)의 부모(.replyLi)가 아닌
 			// 형제 태그 .reply의 내용을 대신 가져올수있도록
 			// 변수 replyContent를 선언해 거기에 저장해주세요.ㅣ 
-			// (hint : .sibling("요소명"); 으로 형제태그를 가져올수있습니다.)
-			
+			// (hint : .siblings("요소명"); 으로 형제태그를 가져올수있습니다.)
+			var replyContent = $(this).prev().text;// button의 직전 태그인 .reply의 내용물 가져오기
+			//var replyContent = $(this).siblings(".reply").text();// button의 형제 중 .reply의 내용물 가져오기
+            //var replyContent = $(this).parent().children(".reply").text();
 			
 			console.log(replytag);
 			
