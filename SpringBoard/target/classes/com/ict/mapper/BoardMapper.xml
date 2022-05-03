@@ -106,6 +106,12 @@
 			             bno> 0
 			        ]]>
 			</select>
+			
+			<update id="updateReplyCount">
+			       UPDATE board_tbl
+			            SET
+			       replycount = replycount +#{amount} WHEREs bno = #{bno}
+			</update>
 
        
         
