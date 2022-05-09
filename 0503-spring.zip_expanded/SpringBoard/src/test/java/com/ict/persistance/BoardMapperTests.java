@@ -24,9 +24,9 @@ public class BoardMapperTests {
 	
 	// 테스트용 메서드의 이름은 testGetList입니다.
 	// 테스트 코드가 실행될 수 있도록 작성해주세요.
-	//@Test
+	@Test
 	public void testGetList() {
-		//List<BoardVO> result = boardMapper.getList(1);
+		//List<BoardVO> result = boardMapper.getList(131088);
 		//log.info("저장된 게시물 정보 : " + result);
 	}
 	
@@ -72,9 +72,9 @@ public class BoardMapperTests {
 		BoardVO board = new BoardVO();
 		log.info("전달 데이터 아직 입력 안된 vo : " + board);
 		// setter로 전달할 title, content, bno를 채워주세요.
-		board.setTitle("바꿀제목");
-		board.setContent("바뀐본문");
-		board.setBno(1);
+		board.setTitle("바꿀11제목");
+		board.setContent("바뀐11본문");
+		board.setBno(131088);
 		log.info("전달 데이터가 입력된 vo : " + board);
 		// 실행해보세요.
 		boardMapper.update(board);
@@ -86,7 +86,7 @@ public class BoardMapperTests {
 	}
 	
 	// 검색어 검색조건 실행 제대로 되는지 여부 테스트
-	@Test
+	//@Test
 	public void testSearchGetList() {
 		SearchCriteria cri = new SearchCriteria();
 		cri.setKeyword("테스트");
