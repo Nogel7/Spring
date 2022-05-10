@@ -12,6 +12,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.ict.domain.MemberVO;
+import com.ict.mapper.MemberMapper;
+
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -22,6 +25,7 @@ import lombok.extern.log4j.Log4j;
 })
 @Log4j
 public class MemberTests {
+	
 	@Autowired// 복호화 담당
 	private PasswordEncoder pwen;
 	@Autowired// DB접근 담당
@@ -48,7 +52,7 @@ public class MemberTests {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void testCryptCustomDB() {
 		try {
 			Connection con = ds.getConnection();
@@ -67,6 +71,33 @@ public class MemberTests {
 		    	}else if(i < 30) {
 		    		pstmt.setString(1, "user" + i);
 		    		pstmt.setString(3, " 운영자" + i);
+		    	}
+		    	pstmt.execute();
+		    }
+		    
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testInsertAuth() {
+		try {
+			Connection con = ds.getConnection();
+		    String sql = "INSERT INTO member_auth(userid, auth) values(?,?)";
+		    
+		    for(int i=0; i<30; i++) {
+		    	PreparedStatement pstmt = con.prepareStatement(sql);
+		    	
+		    	if(i < 10) {
+		    		pstmt.setString(1, "user" + i);
+		    		pstmt.setString(2, "ROLE_USER");
+		    	}else if(i < 20) {
+		    		pstmt.setString(1, "user" + i);
+		    		pstmt.setString(2, "ROLE_MEMBER");
+		    	}else if(i < 30) {
+		    		pstmt.setString(1, "user" + i);
+		    		pstmt.setString(2, "ROLE_ADMIN");
 		    	}
 		    	pstmt.execute();
 		    }
