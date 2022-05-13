@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Tue May 10 12:18:11 KST 2022
-org.eclipse.jst.jee.server\:security_prj=C\:\\apache-tomcat-9.0.58\\wtpwebapps\\security_prj
-org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\nogel\\.m2\\repository\\org\\springframework\\spring-web\\5.0.7.RELEASE\\spring-web-5.0.7.RELEASE.jar=C\:\\apache-tomcat-9.0.58\\wtpwebapps\\security_prj\\WEB-INF\\lib\\spring-web-5.0.7.RELEASE.jar
+#Fri May 13 13:37:29 KST 2022
+org.eclipse.jst.jee.server\:prj_upload=C\:\\apache-tomcat-9.0.58\\wtpwebapps\\prj_upload
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\nogel\\.m2\\repository\\org\\springframework\\spring-web\\5.0.7.RELEASE\\spring-web-5.0.7.RELEASE.jar=C\:\\apache-tomcat-9.0.58\\wtpwebapps\\prj_upload\\WEB-INF\\lib\\spring-web-5.0.7.RELEASE.jar
