@@ -21,6 +21,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\nogel\OneDrive\바탕 화면\220516spring.zip"/>
 			<item value="C:\Users\nogel\OneDrive\바탕 화면\spring_basic-master.zip"/>
 			<item value="C:\Users\nogel\OneDrive\바탕 화면\0503-spring.zip"/>
 			<item value="C:\Users\nogel\OneDrive\바탕 화면\0503-spring(시큐리티 프로젝트).zip"/>
